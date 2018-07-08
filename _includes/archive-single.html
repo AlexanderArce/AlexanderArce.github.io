@@ -50,7 +50,7 @@
 
             <p class="archive__item-excerpt" itemprop="description">{{ repo.description | markdownify }}</p>
             <a class="btn" target="_blank" href="{{ base_path }}/{{ repo.name }}" rel="permalink">GitHub Page <i class="fa fa-github" aria-hidden="true"></i></a>
-            <a class="btn--success" target="_blank" href="{{ repo.html_url }}">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+            <a class="btn --success" target="_blank" href="{{ repo.html_url }}">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
         {% if post.excerpt and site.read_more != 'enabled' %}
         {% elsif post.excerpt and site.read_more == 'enabled' %}
         <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
