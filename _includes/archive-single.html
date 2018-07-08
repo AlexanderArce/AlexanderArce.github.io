@@ -30,7 +30,14 @@
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
-        <a href="{{ base_path }}" rel="permalink">{{ title }}</a>
+        {% for repo in site.github.public_repositories limit:28 %}
+        
+        {% if repo.fork != true %}
+          <a href="{{ base_path }}/{{ repo.name }}" rel="permalink">{{ repo.name }}</a>
+        {% endif %}
+
+      {% endfor %}
+        
       {% endif %}
     </h2>
     
