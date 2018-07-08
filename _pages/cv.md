@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
+{{ site.title }}
 Education
 ======
 * Certificate of Higher Education in Web Applications Development at the IES Joan d'Austria.
