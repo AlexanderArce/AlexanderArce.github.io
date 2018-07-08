@@ -32,7 +32,7 @@
           {% if post.link %}
             <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
           {% else %}
-            <a href="{{ base_path }}/{{ repo.name }}" rel="permalink">{{ repo.name }}</a>
+            {{ repo.name }}
           {% endif %}
         </h2>
         
@@ -49,6 +49,8 @@
             {% endif %}
 
             <p class="archive__item-excerpt" itemprop="description">{{ repo.description | markdownify }}</p>
+            <a class="btn" href="{{ base_path }}/{{ repo.name }}" rel="permalink">{{ repo.name }} page</a>
+            <a class="btn" href="{{ repo.html_url }}">{{ repo.name }} GitHub</a>
         {% if post.excerpt and site.read_more != 'enabled' %}
         {% elsif post.excerpt and site.read_more == 'enabled' %}
         <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
